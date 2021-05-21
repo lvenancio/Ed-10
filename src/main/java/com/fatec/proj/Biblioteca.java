@@ -15,7 +15,9 @@ public class Biblioteca {
     }
 
     public void save(Livro livro) {
+    	if(livros.stream().noneMatch(li -> li.getIsbn().equals(livro.getIsbn())))
             livros.add(livro);
+            
     }
 
     public int size() {
